@@ -100,9 +100,6 @@ textarea:not([rows]) {
   white-space: nowrap;
   border: 0;
 }
-html {
-  font-size: 13px;
-}
 :root {
   --Moderate-violet: hsl(263, 55%, 52%);
   --Very-dark-grayish-blue: hsl(217, 19%, 35%);
@@ -124,7 +121,7 @@ body {
 }
 main {
   width: 100%;
-  max-width: 26rem;
+  max-width: 23.4375rem;
 }
 .c-card-container {
   width: 100%;
@@ -136,7 +133,7 @@ main {
   padding: 2rem;
   border-radius: 1rem;
 }
-.c-card-container__grid-item div {
+.c-card-container__grid-item figcaption {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -167,11 +164,11 @@ main {
 .quote-1 {
   color: var(--white);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 .quote-2 {
   margin-top: 1rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--Light-gray-quote);
 }
 .item-1 {
@@ -215,7 +212,7 @@ main {
     grid-column: 1/3;
   }
 }
-@media (min-width: 1000px) {
+@media (min-width: 62.5rem) {
   main {
     max-width: 90rem;
   }
