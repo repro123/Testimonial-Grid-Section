@@ -1,0 +1,244 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+html {
+  font-size: 13px;
+}
+:root {
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --Light-gray-name: hsl(0, 0%, 81%);
+  --Light-gray-quote: hsl(0, 0%, 70%);
+  --Light-gray-verified: hsl(0, 0%, 50%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+body {
+  font-family: "Barlow Semi Condensed", serif;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  grid-template-rows: 1fr 50px;
+  background-color: var(--Light-grayish-blue);
+}
+main {
+  width: 100%;
+  max-width: 26rem;
+}
+.c-card-container {
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+  margin: auto;
+}
+.c-card-container__grid-item {
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.c-card-container__grid-item div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.2rem;
+}
+.gird-item__profile-picture {
+  border-radius: 100%;
+  border: 2px solid var(--white);
+}
+.gird-item__profile-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.gird-item__profile-details h2 {
+  color: var(--Light-gray-name);
+  font-size: clamp(1.17rem, 0.9897rem + 0.8534vw, 1.3rem);
+  font-weight: 500;
+}
+.gird-item__profile-details p {
+  color: var(--Light-gray-verified);
+  font-weight: 600;
+}
+.grid-item__quote {
+  margin-top: 1rem;
+}
+.quote-1 {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.quote-2 {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--Light-gray-quote);
+}
+.item-1 {
+  background: url(./images/bg-pattern-quotation.svg) no-repeat 80% 0%;
+  background-color: var(--Moderate-violet);
+}
+.item-2 {
+  background-color: var(--Very-dark-grayish-blue);
+}
+.item-4 {
+  background-color: var(--Very-dark-blackish-blue);
+}
+.item-3,
+.item-5 {
+  background-color: var(--white);
+}
+.item-3 .quote-1,
+.item-5 .quote-1 {
+  color: var(--Very-dark-grayish-blue);
+}
+.item-3 h2,
+.item-5 h2 {
+  color: var(--Very-dark-grayish-blue);
+}
+.attribution {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: auto;
+}
+.attribution a {
+  color: var(--Moderate-violet);
+}
+@media (min-width: 47.8125rem) {
+  main {
+    max-width: 65rem;
+  }
+  .c-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .item-5 {
+    grid-column: 1/3;
+  }
+}
+@media (min-width: 1000px) {
+  main {
+    max-width: 90rem;
+  }
+  .c-card-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "daniel daniel jonathan kira"
+      "harmon abrams abrams kira";
+  }
+  .item-1 {
+    grid-area: daniel;
+  }
+  .item-2 {
+    grid-area: jonathan;
+  }
+  .item-3 {
+    grid-area: harmon;
+  }
+  .item-4 {
+    grid-area: abrams;
+  }
+  .item-5 {
+    grid-area: kira;
+  }
+}
